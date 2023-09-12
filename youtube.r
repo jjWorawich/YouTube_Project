@@ -73,9 +73,7 @@ final_df <- final_df%>%
 
 write.csv(final_df,"finalyoutube.csv",row.names = FALSE)
 
-
 ### Exploratory Analysis(EDA)
-final_df <- read_csv("finalyoutube.csv")
 
 ## Descriptive Statistics
 summary(final_df$view_count)
@@ -98,9 +96,6 @@ ggplot(final_df, aes(likes, view_count, col = category_name)) +
 cor(final_df[ ,c("likes", "comment_count", "view_count")])
 
 # 3.Beeswarm plot
-library(ggbeeswarm)
-library(scales)
-
 ggplot(final_df, 
        aes(x = category_name, 
            y = view_count, 
